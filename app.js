@@ -21,10 +21,17 @@ app.use(cookieParser());
 app.use('/api', require('./routes/api'));
 
 app.use(express.static(path.join(__dirname, 'build')));
-// TODO: route detection, currently blindly sends the index on 404
-// service-worker.js also returns 404, fix that too
+
 app.get('*', function(req, res) {
-  res.status(404).sendFile(
+  // Hard code a list of routes to not 404 on. Excludes /api
+  let validUrls = ['login', 'service-worker.js'];
+  let currentUrl = req.url.substring(1);
+  let valid = validUrls.filter(el => el.indexOf(currentUrl) > -1).length > 0;
+
+  // Send a 404 if applicable
+  if(!valid) res.status(404);
+  // We'll handle 404s in React, so send them the index regardless
+  res.sendFile(
     'index.html',
     {
       root: path.join(__dirname, 'build')
