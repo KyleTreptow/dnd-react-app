@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // Import Child Components
@@ -18,7 +17,7 @@ class App extends Component {
     this.setState({ 'panel': p });
   }
   render() {
-    if (this.state.panel == 'home'){
+    if (this.state.panel === 'home'){
       return (
         <div id="wrap">
           <Header changePanel={this.changePanel} />
@@ -27,14 +26,14 @@ class App extends Component {
           </section>
         </div>
       );
-    } else if (this.state.panel == 'spellbook'){
+    } else if (this.state.panel === 'spellbook'){
       return (
         <div id="wrap">
           <Header changePanel={this.changePanel} />
           <Spellbook spellData={this.props.spellData} />
         </div>
       );
-    } else if (this.state.panel == 'character-sheet'){
+    } else if (this.state.panel === 'character-sheet'){
      return (
        <div id="wrap">
          <Header changePanel={this.changePanel} />
@@ -43,7 +42,7 @@ class App extends Component {
          </section>
        </div>
      );
-   } else if (this.state.panel == 'store-front'){
+   } else if (this.state.panel === 'store-front'){
     return (
       <div id="wrap">
         <Header changePanel={this.changePanel} />

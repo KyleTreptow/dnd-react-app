@@ -5818,8 +5818,7 @@ button.close {
   position: relative;
   text-align: center;
   height: 100vh;
-  overflow: hidden;
-  padding-top: 45px; }
+  overflow: hidden; }
 
 .app-inner {
   height: 100%;
