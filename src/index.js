@@ -4,5 +4,8 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import data to use
+import {spellData} from './data/spellData.js';
+
+ReactDOM.render(<App spellData={spellData}/>, document.getElementById('root'));
 registerServiceWorker();
