@@ -1,0 +1,31 @@
+@import "../../sass/index.sass"
+
+.navigation
+  &__list
+    margin: 0
+    padding: 0
+  &__item
+    display: block
+  &__button
+    @extend .fs-base
+    display: block
+    padding: $blh/2 0
+    color: $clr-bg
+    background: transparent
+    border-radius: 0
+    border: 0
+    &:hover,
+    &:focus,
+    &:active
+      cursor: pointer
+  @media #{$media-max-sm}
+    &__list
+      padding: $blh
+  @media #{$media-min-sm}
+    &__list
+      margin-left: -$blh/2
+      margin-right: -$blh/2
+    &__item
+      display: inline-block
+    &__button
+      padding: $blh/2

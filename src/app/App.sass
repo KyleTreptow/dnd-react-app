@@ -1,0 +1,87 @@
+@import "../sass/index.sass"
+
+.app
+  min-height: 100vh
+  overflow: hidden
+  &__inner
+    position: relative
+  &__header,
+  &__footer
+    background: $clr-main
+    color: #fff
+    position: relative
+  &__footer
+    padding: $blh
+  &__branding
+    display: block
+  &__logo
+    display: inline-block
+    width: 200px
+    max-width: 100%
+  &__nav
+    max-width: 100%
+  &__navtoggle
+    display: none
+    padding: 0
+    position: absolute
+    top: 0
+    right: 0
+    width: 25%
+    height: 100%
+    background: $clr-hlt
+    border: 0
+    color: #fff
+    text-transform: uppercase
+    font-weight: 700
+    vertical-align: middle
+    &:hover,
+    &:focus,
+    &:active
+      +transition(background-color)
+      background: darken($clr-hlt, 15%)
+      cursor: pointer
+  &__modal
+  @media #{$media-max-sm}
+    background: darken($clr-main, 20%)
+    &__inner
+      background: #fff
+      +transition(transform)
+      +tansform-translate(0, 0)
+      .app--navopen &
+        +tansform-translate(-75%, 0)
+    &__branding
+      width: 75%
+      text-align: left
+      padding: $blh/2 $blh
+    &__nav
+      position: fixed
+      top: 0
+      right: 0
+      width: 75%
+      +tansform-translate(100%, 0)
+    &__navtoggle
+      display: block
+  @media #{$media-min-sm}
+    &__header
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      grid-template-areas: "brand nav nav"
+      grid-gap: 0
+      align-items: center
+    &__branding,
+    &__nav
+      padding: 0 $blh
+    &__branding
+      grid-area: brand
+    &__nav
+      grid-area: nav
+  @media #{$media-min-md}
+    &__header
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      grid-template-areas: "brand nav nav nav"
+  @media #{$media-min-lg}
+    &__header
+      display: grid
+      grid-template-columns: repeat(6, 1fr)
+      grid-template-areas: "brand nav nav nav nav nav"
