@@ -83,12 +83,12 @@ class App extends Component {
               <li className="pipelist__item">D&D React Project</li>
               <li className="pipelist__item">Kyle, Bryan & Liz</li>
               <li className="pipelist__item">
-                <a href="https://github.com/KyleTreptow/dnd-react-app">Github</a>
+                <a href="https://github.com/KyleTreptow/dnd-react-app" target="_blank">Github</a>
               </li>
             </ul>
           </footer>
         </div>
-        <div className="app__modal"></div>
+        <div className="app__modal">{/* modal component here */}</div>
       </div>
     );
   }
