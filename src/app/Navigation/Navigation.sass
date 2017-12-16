@@ -1,4 +1,16 @@
-@import "../../sass/index.sass"
+@import "../../sass/global.sass"
+
+//////////////////////////////////////////////
+// Component: Navigation
+//////////////////////////////////////////////
+
+.spellbook
+  &__inner
+  @media #{$media-max-sm}
+  @media #{$media-min-sm}
+
+.spellfilters
+  border: solid 1px $clr-alt
 
 .navigation
   &__list
@@ -7,7 +19,7 @@
   &__item
     display: block
   &__button
-    @extend .fs-base
+    // @extend .fs-base
     display: block
     padding: $blh/2 0
     color: $clr-bg

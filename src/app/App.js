@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../img/logo.svg';
+// import logo from '../img/logo.svg';
 import './App.css';
 
-// Child Components
+// Containers (Child Components)
 import Navigation from './Navigation/Navigation.js';
 import Home from './Home/Home.js';
 import Spellbook from './Spellbook/Spellbook.js';
@@ -65,7 +65,6 @@ class App extends Component {
             </a>
             <button
               className="app__navtoggle"
-              role="button"
               name="button"
               onClick={() => { this.openNavi() }} >
               Menu
@@ -83,7 +82,9 @@ class App extends Component {
             <ul className="pipelist">
               <li className="pipelist__item">D&D React Project</li>
               <li className="pipelist__item">Kyle, Byan & Liz</li>
-              <li className="pipelist__item"><a href="#">Github</a></li>
+              <li className="pipelist__item">
+                <a href="https://github.com/KyleTreptow/dnd-react-app">Github</a>
+              </li>
             </ul>
           </footer>
         </div>

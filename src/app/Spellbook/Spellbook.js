@@ -118,8 +118,6 @@ class Spellbook extends Component {
     }
   }
   render() {
-    // app class for layout (mobile || desktop)
-    var appClass = this.state.mobile ? 'app app-mobile' : 'app';
     // spell filtering...
     var runFilter = function(arr, term, property){
       // enter array of data, filter term, & property to filter by... iterate

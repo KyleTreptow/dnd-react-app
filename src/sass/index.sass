@@ -1,50 +1,107 @@
-@import "./functions.sass"
-@import "./mixins.sass"
-@import "./colors.sass"
+@import "./global.sass"
 
 //////////////////////////////////////////////
-// Global Vars
+// Reset
 //////////////////////////////////////////////
 
-// Typography
-$fs-base: 18px
-$line-height: 1.6
-$blh: round($fs-base * $line-height)
+*,
+*:before,
+*:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 
-$font-text: "'Open Sans', sans-serif"
-$font-title: "'Raleway', sans-serif"
-$title-trans: "none"
-$title-weight: 700
+// Baseline for HTML & Body
+html
+  font-size: $fs-base
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
-// Font Scale Factor
-// 1.067: Minor Second
-// 1.125: Major Second
-// 1.200: Minor Third
-// 1.250: Major Third
-// 1.333: Perfect Fourth
-// 1.414: Augmented Fourth
-// 1.500: Perfect Fifth
-// 1.618: Golden Ratio
+body
+  font-family: #{$font-text}
+  margin: 0
+  font-size: $fs-base
+  line-height: $blh
+  color: $clr-text
 
-$scale-factor: 1.333
-$xs-scale-factor: 1.125
+// Headlines
+h1, h2, h3, h4, h5
+  font-family: #{$font-title}
+  font-weight: $title-weight
+  text-transform: #{$title-trans}
+  font-style: inherit
+  line-height: $blh
+  margin-top: 0
+  margin-bottom: $blh
+  color: $clr-title
+  small
+    font-family: #{$font-text}
+    display: block
+    margin-top: $blh / 4
 
-// media breakpoints (min)
-$media-min-xs: "screen and (min-width: 576px)"
-$media-min-sm: "screen and (min-width: 768px)"
-$media-min-md: "screen and (min-width: 992px)"
-$media-min-lg: "screen and (min-width: 1200px)"
-$media-min-xl: "screen and (min-width: 1400px)"
+h1,
+.fs-h1
+  @media #{$media-min-sm}
+    font-size: $fs-base * pow($scale-factor, 3)
+    line-height: $blh * 2
+  @media #{$media-max-sm}
+    font-size: $fs-base * pow($xs-scale-factor, 3)
 
-// media breakpoints (max)
-$media-max-xs: "screen and (max-width: 575px)"
-$media-max-sm: "screen and (max-width: 767px)"
-$media-max-md: "screen and (max-width: 991px)"
-$media-max-lg: "screen and (max-width: 1199px)"
-$media-max-xl: "screen and (max-width: 1399px)"
+h2,
+.fs-h2
+  @media #{$media-min-sm}
+    font-size: $fs-base * pow($scale-factor, 2)
+    line-height: $blh * 1.5
+  @media #{$media-max-sm}
+    font-size: $fs-base * pow($xs-scale-factor, 2)
 
-@import "./reset.sass"
+h3,
+.fs-h3
+  @media #{$media-min-sm}
+    font-size: $fs-base * $scale-factor
+    line-height: $blh * 1.5
+  @media #{$media-max-sm}
+    font-size: $fs-base * $xs-scale-factor
 
+h4,
+.fs-h4,
+.fs-base
+  font-size: $fs-base
+
+h5,
+small,
+button,
+.fs-h5,
+.fs-small
+  @media #{$media-min-sm}
+    font-size: $fs-base / $scale-factor
+  @media #{$media-max-sm}
+    font-size: $fs-base / $xs-scale-factor
+
+// Normalize with new Baseline Values
+p, ul, ol, pre, table, blockquote
+  margin-top: 0
+  margin-bottom: $blh
+
+ul ul, ol ol, ul ol, ol ul
+  margin-top: 0
+  margin-bottom: 0
+
+b, strong, em, small, code
+  line-height: inherit
+
+a
+  color: $clr-hlt
+  text-decoration: none
+  &:hover,
+  &:focus,
+  &:active
+    text-decoration: underline
+
+figure
+  margin: 0
+  img
+    max-width: 100%
 
 //////////////////////////////////////////////
 // Global Mini-Components
@@ -82,8 +139,3 @@ $media-max-xl: "screen and (max-width: 1399px)"
       border-right: solid 1px transparentize($clr-alt, 0.75)
       &:last-child
         border: 0
-
-
-//////////////////////////////////////////////
-// Components
-//////////////////////////////////////////////
