@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "npm run build && PORT=2001 nodemon ./bin/www",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/app/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/app/ -o src/app/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/app/ -o src/app/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/App';
-import './sass/index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 // import data to use
