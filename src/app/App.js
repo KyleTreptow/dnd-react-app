@@ -81,7 +81,7 @@ class App extends Component {
           <footer className="app__footer">
             <ul className="pipelist">
               <li className="pipelist__item">D&D React Project</li>
-              <li className="pipelist__item">Kyle, Byan & Liz</li>
+              <li className="pipelist__item">Kyle, Bryan & Liz</li>
               <li className="pipelist__item">
                 <a href="https://github.com/KyleTreptow/dnd-react-app">Github</a>
               </li>
