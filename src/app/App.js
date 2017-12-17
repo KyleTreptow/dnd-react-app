@@ -6,7 +6,7 @@ import './App.css';
 import Navigation from './Navigation/Navigation.js';
 import Home from './Home/Home.js';
 import Spellbook from './Spellbook/Spellbook.js';
-import Character from './Character/Character.js';
+import CharacterSheet from './CharacterSheet/CharacterSheet.js';
 import Equipment from './Equipment/Equipment.js';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       navOpen : false,
-      panel : 'home'
+      panel : 'character'
     };
     this.changePanel = this.changePanel.bind(this);
   }
@@ -37,7 +37,7 @@ class App extends Component {
   }
   renderCharacter(){
     return (
-      <Character />
+      <CharacterSheet />
     );
   }
   renderEquipment(){
