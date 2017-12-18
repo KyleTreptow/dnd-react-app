@@ -10,9 +10,6 @@ class Spellbook extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      winWidth: 0,
-      winHeight: 0,
-      mobile: false,
       filterLevelTerm: '',
       filterClassTerm: '',
       filterSchoolTerm: '',
@@ -28,29 +25,6 @@ class Spellbook extends Component {
     this.filterByBook = this.filterByBook.bind(this);
     this.randomSpell = this.randomSpell.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
-  updateLayout(){
-    if(this.state.winWidth <= 767){
-      this.setState({ mobile: true },
-      () => console.log('mobile layout'));
-    } else {
-      this.setState({ mobile: false },
-      () => console.log('desktop layout'));
-    }
-  }
-  updateWindowDimensions() {
-    this.setState({
-      winWidth: window.innerWidth,
-      winHeight: window.innerHeight
-    }, () => this.updateLayout());
-  }
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
   }
   spellActivate(info){
     this.setState({ activeSpell: info });

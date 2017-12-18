@@ -13,10 +13,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      winWidth: 0,
+      winHeight: 0,
+      mobile: false,
       navOpen : false,
       panel : 'home'
     };
     this.changePanel = this.changePanel.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
   openNavi() {
     this.setState({ navOpen : !this.state.navOpen });
@@ -24,6 +28,28 @@ class App extends Component {
   changePanel(p) {
     this.setState({ 'panel': p });
     this.setState({ 'navOpen': false });
+  }
+  updateLayout(){
+    if(this.state.winWidth <= 767){
+      this.setState({ mobile: true },
+      () => console.log('mobile layout'));
+    } else {
+      this.setState({ mobile: false },
+      () => console.log('desktop layout'));
+    }
+  }
+  updateWindowDimensions() {
+    this.setState({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight
+    }, () => this.updateLayout());
+  }
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
   }
   renderHome(){
     return (
@@ -46,7 +72,15 @@ class App extends Component {
     );
   }
   render() {
-    let appClass = this.state.navOpen ? 'app app--navopen' : 'app';
+    // app modifier classes
+    let appClass = 'app';
+    if (this.state.navOpen) {
+      appClass += ' app--navopen';
+    }
+    if (this.state.mobile) {
+      appClass += ' app--mobile';
+    }
+    // Panels
     let activePanel = this.renderHome();
     if(this.state.panel === 'spellbook'){
       activePanel = this.renderSpellbook();
