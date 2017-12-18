@@ -5,11 +5,27 @@
 //////////////////////////////////////////////
 
 .spellbook
+  height: 100%
   &__inner
+    height: 100%
+  &__main
+    height: 100%
   &__roll
     padding: 0
+    height: 100%
+    overflow-y: scroll
   @media #{$media-max-sm}
+    &__main
+      padding-top: $blh*5
   @media #{$media-min-sm}
+    &__inner
+      display: grid
+      width: 100%
+      grid-template-areas: "main aside aside"
+    &__main
+      grid-area: main
+    &__aside
+      grid-area: aside
 
 .spellitem
   padding: $blh/2 $blh
@@ -23,11 +39,20 @@
 
 .spellfilters
   padding: $blh/2 $blh
+  border-bottom: solid 1px #ddd
   &__optionlist
     padding: 0
     margin: 0
   &__option
     display: inline-block
+  &__submit
+    display: block
+  @media #{$media-max-sm}
+    position: fixed
+    background: #fff
+    top: $blh*2
+    left: 0
+    width: 100%
 
 .spelldetails
   display: block

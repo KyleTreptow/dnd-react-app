@@ -18,6 +18,11 @@ class Home extends Component {
         <h3>Healine 3</h3>
         <h4>Healine 4</h4>
         <h5>Healine 5</h5>
+        <p>Lorem ipsum dolor sit amet, periculis inciderint vix ne. Omnis debet vis ex, te choro salutatus disputando quo, no usu deserunt pericula argumentum. Vis solet philosophia an. Cu nec ipsum utinam, pri dico corrumpit disputando an. Minimum blandit sadipscing id pri. Ea propriae oportere pro.</p>
+        <h2>Healine 2</h2>
+        <h3>Healine 3</h3>
+        <h4>Healine 4</h4>
+        <h5>Healine 5</h5>
       </div>
     );
   }

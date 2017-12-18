@@ -137,9 +137,9 @@ class SpellFilters extends Component {
               <option data-val="trot">TROT</option>
             </select>
           </li>
-          <li className="spellfilters__option">
+          <li className="spellfilters__submit">
               <button className="button" onClick={() => { this.clearAllFilters() }} >
-                <span>X</span>
+                <span>Clear</span>
               </button>
           </li>
         </ul>
