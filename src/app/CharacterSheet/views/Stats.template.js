@@ -6,7 +6,7 @@ export default function() {
     return (
         <div className="character">
             <h1>Stats Component
-                <small>List the character's stats here</small>
+                <small>List the character&apos;s stats here</small>
             </h1>
             CharacterObject:{JSON.stringify(this.props.characterObject)}<br />
             <button onClick={this.props.updateCharacter}>Click me</button>
