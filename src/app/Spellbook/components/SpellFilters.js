@@ -54,9 +54,9 @@ class SpellFilters extends Component {
     return (
       <div className="spellfilters">
         {/* {Search} */}
-        <div className="########">
+        <div className="spellfilters__search">
           <form
-            className="########"
+            className="spellfilters__searchform"
             id="search-form"
             onSubmit={e => { e.preventDefault(); }}
             autoComplete="off" >
@@ -73,8 +73,8 @@ class SpellFilters extends Component {
           </form>
         </div>
         {/* {Filters} */}
-        <ul className="########">
-          <li>
+        <ul className="spellfilters__optionlist">
+          <li className="spellfilters__option">
             <select className="########"
               onChange={ e => this.updateLevelFilter(e)}
               value={this.state.levelVal}
@@ -92,7 +92,7 @@ class SpellFilters extends Component {
               <option data-val="9">9</option>
             </select>
           </li>
-          <li>
+          <li className="spellfilters__option">
             <select className="########"
               onChange={ e => this.updateClassFilter(e)}
               value={this.state.classVal}
@@ -108,7 +108,7 @@ class SpellFilters extends Component {
               <option data-val="wizard">Wizard</option>
             </select>
           </li>
-          <li>
+          <li className="spellfilters__option">
             <select className="########"
               onChange={ e => this.updateSchoolFilter(e)}
               value={this.state.schoolVal}
@@ -124,7 +124,7 @@ class SpellFilters extends Component {
               <option data-val="transmutation">Transmutation</option>
             </select>
           </li>
-          <li>
+          <li className="spellfilters__option">
             <select className="########"
               onChange={ e => this.updateBookFilter(e)}
               value={this.state.bookVal}
@@ -137,7 +137,7 @@ class SpellFilters extends Component {
               <option data-val="trot">TROT</option>
             </select>
           </li>
-          <li>
+          <li className="spellfilters__option">
               <button className="button" onClick={() => { this.clearAllFilters() }} >
                 <span>X</span>
               </button>

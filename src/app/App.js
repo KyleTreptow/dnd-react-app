@@ -79,6 +79,8 @@ class App extends Component {
     }
     if (this.state.mobile) {
       appClass += ' app--mobile';
+    } else {
+      appClass += ' app--desktop';
     }
     // Panels
     let activePanel = this.renderHome();
@@ -89,6 +91,7 @@ class App extends Component {
     } else if (this.state.panel === 'equipment') {
       activePanel = this.renderEquipment();
     }
+    // render
     return (
       <div className={appClass} id="app">
         <div className="app__inner" id="app">

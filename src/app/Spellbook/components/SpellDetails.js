@@ -8,8 +8,8 @@ class SpellDetails extends Component {
   render() {
     if(this.props.spellDetailData === null) {
       return (
-        <div className="########">
-          <ul className="########">
+        <div className="spelldetails">
+          <ul className="spelldetails__options">
             <li>
               <button className="button" onClick={() => { this.props.randomSpell() }} >
                 <span>?</span>
@@ -24,8 +24,8 @@ class SpellDetails extends Component {
       function createMarkup(html) { return {__html: html}; };
       var descData = this.props.spellDetailData.desc;
       return (
-        <div className="########">
-          <ul className="########">
+        <div className="spelldetails">
+          <ul className="spelldetails__options">
             <li>
               <button className="button" onClick={() => { this.props.randomSpell() }} >
                 <span>?</span>
@@ -33,7 +33,7 @@ class SpellDetails extends Component {
             </li>
             <li>
               <button className="button" onClick={() => { this.props.spellActivate(null) }} >
-                <span className="########">X</span>
+                <span>X</span>
               </button>
             </li>
           </ul>

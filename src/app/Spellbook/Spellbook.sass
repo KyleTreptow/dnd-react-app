@@ -6,8 +6,28 @@
 
 .spellbook
   &__inner
+  &__roll
+    padding: 0
   @media #{$media-max-sm}
   @media #{$media-min-sm}
 
+.spellitem
+  padding: $blh/2 $blh
+  &--alt
+    background: #eee
+  &__list
+    padding: 0
+    margin: 0 0 $blh/2 0
+  &__info
+    display: inline-block
+
 .spellfilters
-  border: solid 1px $clr-alt
+  padding: $blh/2 $blh
+  &__optionlist
+    padding: 0
+    margin: 0
+  &__option
+    display: inline-block
+
+.spelldetails
+  display: block

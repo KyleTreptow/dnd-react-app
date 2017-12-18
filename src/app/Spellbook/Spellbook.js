@@ -112,7 +112,7 @@ class Spellbook extends Component {
     return (
       <div className="spellbook">
         <div className="spellbook__inner">
-            <div className="######">
+            <div className="spellbook__main">
               <SpellFilters
                 searchTerm={this.state.searchTerm}
                 searchByName={this.searchByName}
@@ -121,7 +121,7 @@ class Spellbook extends Component {
                 filterBySchool={this.filterBySchool}
                 filterByBook={this.filterByBook}
                 clearSearch={this.clearSearch} />
-              <ul className="######">
+              <ul className="spellbook__roll">
                 { spells.map((item, i) =>
                   <SpellItem
                     key={i}
@@ -134,8 +134,8 @@ class Spellbook extends Component {
                 {this.renderNoSpells(spells)}
               </ul>
             </div>
-            <div className="######">
-              <div className="######">
+            <div className="spellbook__aside">
+              <div className="spellbook__details">
                 <SpellDetails
                   spellDetailData={this.state.activeSpell}
                   spellActivate={this.spellActivate}
