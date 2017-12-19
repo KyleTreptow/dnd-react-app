@@ -92,6 +92,10 @@ class Spellbook extends Component {
     }
   }
   render() {
+    var spellbookClass = 'spellbook';
+    if(this.state.activeSpell){
+      spellbookClass += ' spellbook--active';
+    }
     // spell filtering...
     var runFilter = function(arr, term, property){
       // enter array of data, filter term, & property to filter by... iterate
@@ -110,7 +114,7 @@ class Spellbook extends Component {
     console.log('# rendering: '+spells.length);
 
     return (
-      <div className="spellbook">
+      <div className={spellbookClass}>
         <div className="spellbook__inner">
             <div className="spellbook__main">
               <SpellFilters

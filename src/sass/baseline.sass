@@ -39,6 +39,19 @@ $media-max-md: "screen and (max-width: 991px)"
 $media-max-lg: "screen and (max-width: 1199px)"
 $media-max-xl: "screen and (max-width: 1399px)"
 
+
+.fs-small
+  @media #{$media-min-sm}
+    font-size: $fs-base / $scale-factor
+  @media #{$media-max-sm}
+    font-size: $fs-base / $xs-scale-factor
+
+.fs-extra-small
+  @media #{$media-min-sm}
+    font-size: $fs-base / $scale-factor / $scale-factor
+  @media #{$media-max-sm}
+    font-size: $fs-base / $xs-scale-factor / $xs-scale-factor
+
 //////////////////////////////////////////////
 // Palette A
 //////////////////////////////////////////////

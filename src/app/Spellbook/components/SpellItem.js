@@ -10,8 +10,11 @@ class SpellItem extends Component {
     var liClass = this.props.index % 2 === 0 ? 'spellitem spellitem--'+itemSchool : 'spellitem spellitem--alt spellitem--'+itemSchool;
     return (
       <li className={liClass} data-index={this.props.index} data-school={itemSchool}>
-          <b>{this.props.itemData.name + ' '}</b>
-          ({this.props.itemData.level})
+        <button className="spellitem__button" onClick={() => { this.props.spellActivate(this.props.itemData) }} >
+          <h2 className="spellitem__title">
+            {this.props.itemData.name + ' '}
+            <span className="spellitem__level">({this.props.itemData.level})</span>
+          </h2>
           <ul className="spellitem__list">
             <li className="spellitem__info">
               <small>{this.props.itemData.school}</small>
@@ -23,7 +26,7 @@ class SpellItem extends Component {
               <small>{this.props.itemData.page}</small>
             </li>
           </ul>
-          <button className="button" onClick={() => { this.props.spellActivate(this.props.itemData) }} >View Spell</button>
+        </button>
       </li>
     );
   }

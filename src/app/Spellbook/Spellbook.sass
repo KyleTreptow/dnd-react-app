@@ -14,9 +14,28 @@
     padding: 0
     height: 100%
     overflow-y: scroll
+
   @media #{$media-max-sm}
     &__main
-      padding-top: $blh*5
+      padding-top: $blh*4
+    &__aside
+      display: block
+      visibility: hidden
+      z-index: -10
+      opacity: 0.01
+      display: block
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: transparentize(darken($clr-main, 30%), 0.15)
+      +transition(opacity)
+      .spellbook--active &
+        opacity: 1
+        z-index: 100
+        visibility: visible
+
   @media #{$media-min-sm}
     &__inner
       display: grid
@@ -32,14 +51,33 @@
 //////////////////////////////////////////////
 
 .spellitem
-  padding: $blh/2 $blh
-  &--alt
-    background: #eee
+  display: block
+  text-align: left
+  padding: $blh/4 $blh
   &__list
     padding: 0
     margin: 0 0 $blh/2 0
+    @extend .fs-extra-small
   &__info
     display: inline-block
+    margin-right: $blh/2
+  &__title
+    font-size: $fs-base
+    margin-bottom: $blh/2
+  &__level
+    font-weight: 400
+  &__button
+    padding: $blh/4 $blh
+    text-align: inherit
+    background: transparent
+    display: block
+    border: solid 1px $clr-bg
+    width: 100%
+    .spellitem--alt &
+      background: $clr-bg
+  &__list
+    margin: 0
+    padding: 0
   @media #{$media-max-sm}
   @media #{$media-min-sm}
 
@@ -52,13 +90,27 @@
   border-bottom: solid 1px #ddd
   &__optionlist
     padding: 0
-    margin: 0
+    margin: 0 0 $blh/2 0
   &__option
     display: inline-block
-  &__submit
-    display: block
+    width: 25%
+    border: solid 1px #ddd
+    border-right: 0
+    &:last-child
+      border-right: solid 1px #ddd
   &__formcontrol
     display: block
+    position: relative
+    padding-right: $blh*2
+  &__clear
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    background: $clr-hlt
+    border: 0
+    color: #fff
+    width: $blh*2
   &__input
     &--text
       border: solid 1px #ddd
@@ -67,7 +119,14 @@
       width: 100%
       margin-bottom: $blh/4
     &--select
-      
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      background: transparent
+      padding: $blh/4
+      border-radius: 0
+      border: 0
+      width: 100%
   @media #{$media-max-sm}
     position: fixed
     background: #fff
@@ -81,6 +140,22 @@
 //////////////////////////////////////////////
 
 .spelldetails
-  display: block
+  &__optionlist
+    padding: 0
+    margin: 0 0 $blh 0
+  &__option
+    display: inline-block
   @media #{$media-max-sm}
+    position: absolute
+    top: $blh/2
+    left: $blh/2
+    bottom: $blh/2
+    right: $blh/2
+    display: block
+    background: #fff
+    border-radius: 4px
+    padding: $blh
+    overflow-y: scroll
+    &__optionlist
+      text-align: right
   @media #{$media-min-sm}

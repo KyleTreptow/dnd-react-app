@@ -68,6 +68,9 @@ class SpellFilters extends Component {
                 placeholder="Search by Name"
                 value={this.props.searchTerm}
                 onChange={this.props.searchByName} />
+                  <button className="spellfilters__clear" onClick={() => { this.clearAllFilters() }} >
+                    <span>Clear</span>
+                  </button>
             </div>
           </form>
         </div>
@@ -135,11 +138,6 @@ class SpellFilters extends Component {
               <option data-val="scag">SCAG</option>
               <option data-val="trot">TROT</option>
             </select>
-          </li>
-          <li className="spellfilters__submit">
-              <button className="button button--small" onClick={() => { this.clearAllFilters() }} >
-                <span>Clear</span>
-              </button>
           </li>
         </ul>
       </div>
