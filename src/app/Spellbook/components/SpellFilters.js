@@ -54,16 +54,15 @@ class SpellFilters extends Component {
     return (
       <div className="spellfilters">
         {/* {Search} */}
-        <div className="########">
+        <div className="spellfilters__search">
           <form
-            className="########"
-            id="search-form"
+            className="spellfilters__searchform"
             onSubmit={e => { e.preventDefault(); }}
             autoComplete="off" >
-            <div className="########">
+            <div className="spellfilters__formcontrol">
               <input
                 type="text"
-                className="########"
+                className="spellfilters__input spellfilters__input--text"
                 id="form-title"
                 name="title"
                 placeholder="Search by Name"
@@ -73,9 +72,9 @@ class SpellFilters extends Component {
           </form>
         </div>
         {/* {Filters} */}
-        <ul className="########">
-          <li>
-            <select className="########"
+        <ul className="spellfilters__optionlist">
+          <li className="spellfilters__option">
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateLevelFilter(e)}
               value={this.state.levelVal}
               id="level-select" >
@@ -92,8 +91,8 @@ class SpellFilters extends Component {
               <option data-val="9">9</option>
             </select>
           </li>
-          <li>
-            <select className="########"
+          <li className="spellfilters__option">
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateClassFilter(e)}
               value={this.state.classVal}
               id="class-select" >
@@ -108,8 +107,8 @@ class SpellFilters extends Component {
               <option data-val="wizard">Wizard</option>
             </select>
           </li>
-          <li>
-            <select className="########"
+          <li className="spellfilters__option">
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateSchoolFilter(e)}
               value={this.state.schoolVal}
               id="school-select" >
@@ -124,8 +123,8 @@ class SpellFilters extends Component {
               <option data-val="transmutation">Transmutation</option>
             </select>
           </li>
-          <li>
-            <select className="########"
+          <li className="spellfilters__option">
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateBookFilter(e)}
               value={this.state.bookVal}
               id="book-select" >
@@ -137,9 +136,9 @@ class SpellFilters extends Component {
               <option data-val="trot">TROT</option>
             </select>
           </li>
-          <li>
-              <button className="button" onClick={() => { this.clearAllFilters() }} >
-                <span>X</span>
+          <li className="spellfilters__submit">
+              <button className="button button--small" onClick={() => { this.clearAllFilters() }} >
+                <span>Clear</span>
               </button>
           </li>
         </ul>

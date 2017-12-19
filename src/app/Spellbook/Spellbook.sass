@@ -5,9 +5,82 @@
 //////////////////////////////////////////////
 
 .spellbook
+  height: 100%
   &__inner
+    height: 100%
+  &__main
+    height: 100%
+  &__roll
+    padding: 0
+    height: 100%
+    overflow-y: scroll
+  @media #{$media-max-sm}
+    &__main
+      padding-top: $blh*5
+  @media #{$media-min-sm}
+    &__inner
+      display: grid
+      width: 100%
+      grid-template-areas: "main aside aside"
+    &__main
+      grid-area: main
+    &__aside
+      grid-area: aside
+
+//////////////////////////////////////////////
+// Component: Spellitem
+//////////////////////////////////////////////
+
+.spellitem
+  padding: $blh/2 $blh
+  &--alt
+    background: #eee
+  &__list
+    padding: 0
+    margin: 0 0 $blh/2 0
+  &__info
+    display: inline-block
   @media #{$media-max-sm}
   @media #{$media-min-sm}
 
+//////////////////////////////////////////////
+// Component: Spellfilters
+//////////////////////////////////////////////
+
 .spellfilters
-  border: solid 1px $clr-alt
+  padding: $blh/2 $blh
+  border-bottom: solid 1px #ddd
+  &__optionlist
+    padding: 0
+    margin: 0
+  &__option
+    display: inline-block
+  &__submit
+    display: block
+  &__formcontrol
+    display: block
+  &__input
+    &--text
+      border: solid 1px #ddd
+      padding: $blh/4 $blh/2
+      display: block
+      width: 100%
+      margin-bottom: $blh/4
+    &--select
+      
+  @media #{$media-max-sm}
+    position: fixed
+    background: #fff
+    top: $blh*2
+    left: 0
+    width: 100%
+  @media #{$media-min-sm}
+
+//////////////////////////////////////////////
+// Component: Spelldetails
+//////////////////////////////////////////////
+
+.spelldetails
+  display: block
+  @media #{$media-max-sm}
+  @media #{$media-min-sm}

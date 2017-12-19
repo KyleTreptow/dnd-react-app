@@ -8,8 +8,8 @@ class SpellDetails extends Component {
   render() {
     if(this.props.spellDetailData === null) {
       return (
-        <div className="########">
-          <ul className="########">
+        <div className="spelldetails">
+          <ul className="spelldetails__options">
             <li>
               <button className="button" onClick={() => { this.props.randomSpell() }} >
                 <span>?</span>
@@ -24,8 +24,8 @@ class SpellDetails extends Component {
       function createMarkup(html) { return {__html: html}; };
       var descData = this.props.spellDetailData.desc;
       return (
-        <div className="########">
-          <ul className="########">
+        <div className="spelldetails">
+          <ul className="spelldetails__options">
             <li>
               <button className="button" onClick={() => { this.props.randomSpell() }} >
                 <span>?</span>
@@ -33,7 +33,7 @@ class SpellDetails extends Component {
             </li>
             <li>
               <button className="button" onClick={() => { this.props.spellActivate(null) }} >
-                <span className="########">X</span>
+                <span>X</span>
               </button>
             </li>
           </ul>
@@ -43,19 +43,15 @@ class SpellDetails extends Component {
           </h2>
           <ul className="########">
             <li><b>Level:</b> {this.props.spellDetailData.level}</li>
-            <li className="########">|</li>
             <li><b>Page:</b> {this.props.spellDetailData.page}</li>
-            <li className="########">|</li>
             <li><b>School:</b> {this.props.spellDetailData.school}</li>
           </ul>
           <ul className="########">
             <li><b>Range:</b> {this.props.spellDetailData.range}</li>
-            <li className="########">|</li>
             <li><b>Duration:</b> {this.props.spellDetailData.duration}</li>
           </ul>
           <ul className="########">
             <li><b>Components:</b> {this.props.spellDetailData.components}</li>
-            <li className="########">|</li>
             <li><b>Casting Time:</b> {this.props.spellDetailData.casting_time}</li>
           </ul>
           <ul className="########">
@@ -66,7 +62,6 @@ class SpellDetails extends Component {
           </ul>
           <ul className="########">
             <li><b>Concentration:</b> {this.props.spellDetailData.concentration}</li>
-            <li className="########">|</li>
             <li><b>Ritual:</b> {this.props.spellDetailData.ritual}</li>
           </ul>
           <p dangerouslySetInnerHTML={createMarkup(descData)} />
