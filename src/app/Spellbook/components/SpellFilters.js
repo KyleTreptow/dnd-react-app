@@ -57,13 +57,12 @@ class SpellFilters extends Component {
         <div className="spellfilters__search">
           <form
             className="spellfilters__searchform"
-            id="search-form"
             onSubmit={e => { e.preventDefault(); }}
             autoComplete="off" >
-            <div className="########">
+            <div className="spellfilters__formcontrol">
               <input
                 type="text"
-                className="########"
+                className="spellfilters__input spellfilters__input--text"
                 id="form-title"
                 name="title"
                 placeholder="Search by Name"
@@ -138,7 +137,7 @@ class SpellFilters extends Component {
             </select>
           </li>
           <li className="spellfilters__submit">
-              <button className="button" onClick={() => { this.clearAllFilters() }} >
+              <button className="button button--small" onClick={() => { this.clearAllFilters() }} >
                 <span>Clear</span>
               </button>
           </li>

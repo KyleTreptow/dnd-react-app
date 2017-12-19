@@ -27,6 +27,10 @@
     &__aside
       grid-area: aside
 
+//////////////////////////////////////////////
+// Component: Spellitem
+//////////////////////////////////////////////
+
 .spellitem
   padding: $blh/2 $blh
   &--alt
@@ -36,6 +40,12 @@
     margin: 0 0 $blh/2 0
   &__info
     display: inline-block
+  @media #{$media-max-sm}
+  @media #{$media-min-sm}
+
+//////////////////////////////////////////////
+// Component: Spellfilters
+//////////////////////////////////////////////
 
 .spellfilters
   padding: $blh/2 $blh
@@ -47,12 +57,27 @@
     display: inline-block
   &__submit
     display: block
+  &__formcontrol
+    display: block
+  &__input
+    &--text
+      border: solid 1px #ddd
+      padding: $blh/4 $blh/2
+      display: block
+      width: 100%
   @media #{$media-max-sm}
     position: fixed
     background: #fff
     top: $blh*2
     left: 0
     width: 100%
+  @media #{$media-min-sm}
+
+//////////////////////////////////////////////
+// Component: Spelldetails
+//////////////////////////////////////////////
 
 .spelldetails
   display: block
+  @media #{$media-max-sm}
+  @media #{$media-min-sm}

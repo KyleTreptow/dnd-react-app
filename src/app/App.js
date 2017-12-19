@@ -115,7 +115,7 @@ class App extends Component {
             { activePanel }
 
           </main>
-          <footer className="app__footer">
+          {/* <footer className="app__footer">
             <ul className="pipelist">
               <li className="pipelist__item">D&D React Project</li>
               <li className="pipelist__item">Kyle, Bryan & Liz</li>
@@ -123,9 +123,11 @@ class App extends Component {
                 <a href="https://github.com/KyleTreptow/dnd-react-app" target="_blank">Github</a>
               </li>
             </ul>
-          </footer>
+          </footer> */}
         </div>
-        <div className="app__modal">{/* modal component here */}</div>
+        <div className="app__modal">
+          {/* modal component here */}
+        </div>
       </div>
     );
   }
