@@ -74,7 +74,7 @@ class SpellFilters extends Component {
         {/* {Filters} */}
         <ul className="spellfilters__optionlist">
           <li className="spellfilters__option">
-            <select className="########"
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateLevelFilter(e)}
               value={this.state.levelVal}
               id="level-select" >
@@ -92,7 +92,7 @@ class SpellFilters extends Component {
             </select>
           </li>
           <li className="spellfilters__option">
-            <select className="########"
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateClassFilter(e)}
               value={this.state.classVal}
               id="class-select" >
@@ -108,7 +108,7 @@ class SpellFilters extends Component {
             </select>
           </li>
           <li className="spellfilters__option">
-            <select className="########"
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateSchoolFilter(e)}
               value={this.state.schoolVal}
               id="school-select" >
@@ -124,7 +124,7 @@ class SpellFilters extends Component {
             </select>
           </li>
           <li className="spellfilters__option">
-            <select className="########"
+            <select className="spellfilters__input spellfilters__input--select"
               onChange={ e => this.updateBookFilter(e)}
               value={this.state.bookVal}
               id="book-select" >
