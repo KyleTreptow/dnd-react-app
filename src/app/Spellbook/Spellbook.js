@@ -139,12 +139,10 @@ class Spellbook extends Component {
               </ul>
             </div>
             <div className="spellbook__aside">
-              <div className="spellbook__details">
-                <SpellDetails
-                  spellDetailData={this.state.activeSpell}
-                  spellActivate={this.spellActivate}
-                  randomSpell={this.randomSpell} />
-              </div>
+              <SpellDetails
+                spellDetailData={this.state.activeSpell}
+                spellActivate={this.spellActivate}
+                randomSpell={this.randomSpell} />
             </div>
         </div>
       </div>
