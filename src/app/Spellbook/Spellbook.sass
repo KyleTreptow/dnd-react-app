@@ -20,16 +20,27 @@
       padding-top: $blh*4
     &__aside
       display: block
-      display: block
       position: fixed
+      z-index: 10
       top: 0
       left: 0
-      width: 85%
+      width: 90%
       height: 100%
       background: #fff
       +transition(transform)
+      +tansform-translate(-100%, 0)
       .spellbook--active &
-        // +transform-translate(0, 0)
+        +tansform-translate(0, 0)
+    &__overlay
+      display: block
+      position: fixed
+      z-index: 0
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: transparentize(darken($clr-main, 10%), 0.2)
+      border: 0
 
   @media #{$media-min-sm}
     &__inner
@@ -146,6 +157,7 @@
     position: absolute
     display: block
     background: #fff
+    height: 100%
     border-radius: 4px
     overflow-y: scroll
     &__optionlist

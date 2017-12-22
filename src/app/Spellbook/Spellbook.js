@@ -91,6 +91,16 @@ class Spellbook extends Component {
       );
     }
   }
+  renderOverlay(){
+    if(this.state.activeSpell){
+      return (
+        <button
+          className="spellbook__overlay"
+          onClick={() => { this.spellActivate(null) }} >
+          </button>
+      );
+    }
+  }
   render() {
     var spellbookClass = 'spellbook';
     if(this.state.activeSpell){
@@ -144,6 +154,7 @@ class Spellbook extends Component {
                 spellActivate={this.spellActivate}
                 randomSpell={this.randomSpell} />
             </div>
+            {this.renderOverlay()}
         </div>
       </div>
     );
