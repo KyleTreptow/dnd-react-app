@@ -6,6 +6,13 @@ import Template from '../views/Stats.template'
 export default class StatsComponent extends CSBaseComponent {
     constructor(props) {
         super(props);
+
+        this.statsObject = this.props.characterObject.get("stats").toObject();
+    }
+
+    updateCharacter() {
+        // Do work here
+        super.updateCharacter();
     }
 
     render() {

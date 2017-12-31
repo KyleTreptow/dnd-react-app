@@ -1,7 +1,7 @@
 const { Map, List } = require('immutable');
 
 export default class Character {
-    constructor(character) {
+    constructor(character = {}) {
         // This "private" variable will hold the immutable representation
         // of the character data
         this._data = Map({});
@@ -84,7 +84,6 @@ export default class Character {
                     }
                     let conditionalModifiers = List([]);
                     if (Array.isArray(character.skills[skill].conditionalModifiers)) {
-                        let modifierValue, title, description;
                         for (const conditionalModifier of character.skills[skill].conditionalModifiers) {
                             // var to expose to outside of for loop
                             let modifierValue = isNaN(conditionalModifier.modifierValue) ? 0 : Number(conditionalModifier.modifierValue);
