@@ -6,3 +6,33 @@
 
 .character
   padding: $blh
+  height: 100%
+  &__inner
+    height: 100%
+  &__main
+    height: 100%
+    overflow-y: scroll
+
+.character-stats
+  text-align: center
+  display: grid
+  justify-items: center
+  grid-template-columns: repeat(3, 1fr)
+.character-stats__container
+  border: solid 1px gray
+  padding: $blh/2
+  width: 100%
+
+
+.character-stats__fraction
+  display: grid
+  justify-items: center
+  align-items: center
+  grid-template-columns: repeat(2, $blh * $scale-factor)
+  grid-auto-rows: minmax($blh * $scale-factor, auto)
+  grid-template-areas: "numerator diagonal1" "diagonal2 denominator"
+.character-stats__numerator
+  grid-area: numerator
+
+.character-stats__denominator
+  grid-area: denominator

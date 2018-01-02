@@ -4,17 +4,32 @@ import DandD from '../classes/DandD.class'
 
 export default function() {
     return (
-        <div className="character">
+        <div>
             <h1>Stats Component
                 <small>List the character&apos;s stats here</small>
             </h1>
-            <ul className="stats">
+
+            <h2>View to the specs</h2>
+            <div className="character-stats">
+            {Object.keys(this.statsObject).map((stat, index) =>
+                <div key={index} className="character-stats__container">
+                    <div><small>{DandD.titleAbbr(stat)}</small></div>
+                    <sup>{this.statsObject[stat].stat}</sup>/<sub>{DandD.statToBonus(this.statsObject[stat].stat)}</sub>
+                </div>
+            )}
+            </div>
+            <hr />
+            <h2>Alternate view for iPhone SE</h2>
+            <div className="character-stats">
                 {Object.keys(this.statsObject).map((stat, index) =>
-                    <li key={index}>{stat}: {this.statsObject[stat]} ({DandD.statToBonus(this.statsObject[stat])})</li>
+                    <div key={index} className="character-stats__container">
+                        <div><small>{DandD.titleAbbr(stat)}</small></div>
+                        Base: {this.statsObject[stat].stat}<br />
+                        Mod: {DandD.statToBonus(this.statsObject[stat].stat)}<br />
+                        Save: {JSON.stringify(this.statsObject[stat].saveProficient)}
+                    </div>
                 )}
-            </ul>
-            <button onClick={this.props.updateCharacter}>Click me</button>
-            <p>Lorem ipsum dolor sit amet, periculis inciderint vix ne. Omnis debet vis ex, te choro salutatus disputando quo, no usu deserunt pericula argumentum. Vis solet philosophia an. Cu nec ipsum utinam, pri dico corrumpit disputando an. Minimum blandit sadipscing id pri. Ea propriae oportere pro.</p>
+            </div>
         </div>
     );
 }

@@ -6,12 +6,30 @@ import Template from './views/CharacterSheet.template'
 
 const sampleCharacterConfig = {
     stats: {
-        strength: 15,
-        dexterity: 14,
-        constitution: 10,
-        intelligence: 11,
-        wisdom: 12,
-        charisma: 14
+        strength: {
+            stat: 15,
+            saveProficient: false
+        },
+        dexterity: {
+            stat: 14,
+            saveProficient: true
+        },
+        constitution: {
+            stat: 10,
+            saveProficient: false
+        },
+        intelligence: {
+            stat: 11,
+            saveProficient: false
+        },
+        wisdom: {
+            stat: 12,
+            saveProficient: false
+        },
+        charisma: {
+            stat: 14,
+            saveProficient: true
+        }
     },
     skills: {
         acrobatics: {

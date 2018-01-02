@@ -7,7 +7,7 @@ export default class StatsComponent extends CSBaseComponent {
     constructor(props) {
         super(props);
 
-        this.statsObject = this.props.characterObject.get("stats").toObject();
+        this.statsObject = this.props.characterObject.get("stats").toJS();
     }
 
     updateCharacter() {

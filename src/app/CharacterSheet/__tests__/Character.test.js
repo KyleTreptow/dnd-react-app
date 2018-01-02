@@ -4,12 +4,30 @@ import Character from "../classes/Character.class"
 it("creates correct character immutable", () => {
     let characterConfig = {
         stats: {
-            strength: 15,
-            dexterity: 14,
-            constitution: 10,
-            intelligence: 11,
-            wisdom: 12,
-            charisma: 14
+            strength: {
+                stat: 15,
+                saveProficient: false
+            },
+            dexterity: {
+                stat:  14,
+                saveProficient: true
+            },
+            constitution: {
+                stat: 10,
+                saveProficient: false
+            },
+            intelligence: {
+                stat: 11,
+                saveProficient: false
+            },
+            wisdom: {
+                stat: 12,
+                saveProficient: false
+            },
+            charisma: {
+                stat: 14,
+                saveProficient: true
+            }
         },
         skills: {
             acrobatics: {
@@ -56,12 +74,30 @@ it("creates correct character immutable", () => {
     let character = new Character(characterConfig);
     expect(character._data).toEqual(Map({
         stats: Map({
-            strength: 15,
-            dexterity: 14,
-            constitution: 10,
-            intelligence: 11,
-            wisdom: 12,
-            charisma: 14
+            strength: Map({
+                stat: 15,
+                saveProficient: false
+            }),
+            dexterity: Map({
+                stat: 14,
+                saveProficient: true
+            }),
+            constitution: Map({
+                stat: 10,
+                saveProficient: false
+            }),
+            intelligence: Map({
+                stat: 11,
+                saveProficient: false
+            }),
+            wisdom: Map({
+                stat: 12,
+                saveProficient: false
+            }),
+            charisma: Map({
+                stat: 14,
+                saveProficient: true
+            })
         }),
         skills: Map({
             acrobatics: Map({

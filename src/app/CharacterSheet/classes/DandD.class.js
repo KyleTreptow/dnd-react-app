@@ -32,4 +32,12 @@ export default class DandD {
     static titleCase(str) {
         return str.split(' ').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
     }
+
+    static abbreviate(str) {
+        return str.substring(0, 3);
+    }
+
+    static titleAbbr(str) {
+        return this.abbreviate(this.titleCase(str));
+    }
 }

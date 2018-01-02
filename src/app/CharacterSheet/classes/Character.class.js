@@ -9,17 +9,33 @@ export default class Character {
         /*
          * This property should be structured as such:
          * {
-         *      (stat name) : (Number),
+         *      (stat name) : {
+         *          stat: (Number),
+         *          saveProficient: (Boolean),
+         *      },
          *      ...
          * }
          */
         let stats = Map({});
         if (typeof character.stats === "object") {
             for(const stat in character.stats) {
+                let statMap = Map({});
+                statMap = statMap.set(
+                    "stat",
+                    isNaN(Number(character.stats[stat].stat)) ?
+                        0 : Number(character.stats[stat].stat)
+                );
+                statMap = statMap.set(
+                    "saveProficient",
+                    (typeof character.stats[stat].stat === "string" &&
+                        character.stats[stat].stat.toLowerCase() === "true") ||
+                    ((typeof character.stats[stat].saveProficient === "boolean" ||
+                        typeof character.stats[stat].saveProficient === "number") &&
+                        !!character.stats[stat].saveProficient)
+                );
                 stats = stats.set(
                     stat,
-                    isNaN(Number(character.stats[stat])) ?
-                        0 : Number(character.stats[stat])
+                    statMap
                 );
             }
         }
