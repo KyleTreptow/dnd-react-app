@@ -1,6 +1,7 @@
 import React from 'react';
 
 import StatsComponent from '../components/StatsComponent'
+import SkillsComponent from '../components/SkillsComponent'
 
 export default function() {
     return (
