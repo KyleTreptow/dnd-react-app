@@ -188,6 +188,64 @@ export default class Character {
             }
         }
         this._data = this._data.set("racialFeatures", racialFeatures);
+
+        /*
+         * This property should be structured as such:
+         * [
+         *      {
+         *          name : (String),
+         *          desc : (String),
+         *          page : (String),
+         *          range : (String),
+         *          components : (String),
+         *          ritual : (String),
+         *          duration : (String),
+         *          concentration : (String),
+         *          casting_time : (String),
+         *          level : (String),
+         *          school : (String),
+         *          class : (String)
+         *      }
+         *      ...
+         * ]
+         */
+        let spells = List([]);
+        if (Array.isArray(character.spells)) {
+            for (const spell of character.spells) {
+                if (typeof spell.name === "string" &&
+                    typeof spell.desc === "string" &&
+                    typeof spell.page === "string" &&
+                    typeof spell.range === "string" &&
+                    typeof spell.components === "string" &&
+                    typeof spell.ritual === "string" &&
+                    typeof spell.duration === "string" &&
+                    typeof spell.concentration === "string" &&
+                    typeof spell.casting_time === "string" &&
+                    typeof spell.level === "string" &&
+                    typeof spell.concentration === "string" &&
+                    typeof spell.school === "string" &&
+                    typeof spell.class === "string") {
+                    // Verified, create and add the spell
+                    let newSpell = Map({
+                        name: spell.name,
+                        description: spell.desc,
+                        page: spell.page,
+                        range: spell.range,
+                        components: spell.components,
+                        ritual: spell.ritual,
+                        duration: spell.duration,
+                        concentration: spell.concentration,
+                        casting_time: spell.casting_time,
+                        level: spell.level,
+                        school: spell.school,
+                        class: spell.class
+                    });
+
+                    spells = spells.push(newSpell);
+                }
+            }
+        }
+        this._data = this._data.set("spells", spells);
     }
 
     immutify() {
