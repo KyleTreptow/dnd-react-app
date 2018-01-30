@@ -17,7 +17,7 @@ class App extends Component {
       winHeight: 0,
       mobile: false,
       navOpen : false,
-      panel : 'home'
+      panel : 'spellbook'
     };
     this.changePanel = this.changePanel.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
