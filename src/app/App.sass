@@ -78,12 +78,26 @@
       left: 0
       width: 100%
   @media #{$media-min-sm}
+    &__inner
+      height: 100vh
+      overflow: hidden
+      position: relative
+      padding-top: $blh*1.5
+    &__main
+      height: 100%
+      position: relative
+      z-index: 0
     &__header
       display: grid
       grid-template-columns: repeat(3, 1fr)
       grid-template-areas: "brand nav nav"
       grid-gap: 0
       align-items: center
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      z-index: 100
     &__branding,
     &__nav
       padding: 0 $blh

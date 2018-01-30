@@ -44,12 +44,17 @@
     &__inner
       display: grid
       width: 100%
-      grid-template-columns: 1fr 1fr 1fr
-      grid-template-areas: "main aside aside"
+      grid-template-columns: 1fr 2fr
+      grid-template-rows: 100%
+      grid-template-areas: "main aside"
     &__main
       grid-area: main
+      position: relative
+      padding-top: $blh*4
     &__aside
       grid-area: aside
+    &__roll
+      height: 100%
 
 //////////////////////////////////////////////
 // Component: Spellitem
@@ -138,7 +143,11 @@
     left: 0
     width: 100%
   @media #{$media-min-sm}
-
+    position: absolute
+    background: #fff
+    top: 0
+    left: 0
+    width: 100%
 //////////////////////////////////////////////
 // Component: Spelldetails
 //////////////////////////////////////////////
