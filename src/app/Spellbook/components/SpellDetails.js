@@ -44,28 +44,18 @@ class SpellDetails extends Component {
               {/* <span className="icon"><img src={logo} className="app-logo" alt="logo" /></span> */}
               {this.props.spellDetailData.name}
             </h2>
-            <ul className="########">
-              <li><b>Level:</b> {this.props.spellDetailData.level}</li>
-              <li><b>Page:</b> {this.props.spellDetailData.page}</li>
-              <li><b>School:</b> {this.props.spellDetailData.school}</li>
-            </ul>
-            <ul className="########">
-              <li><b>Range:</b> {this.props.spellDetailData.range}</li>
-              <li><b>Duration:</b> {this.props.spellDetailData.duration}</li>
-            </ul>
-            <ul className="########">
-              <li><b>Components:</b> {this.props.spellDetailData.components}</li>
-              <li><b>Casting Time:</b> {this.props.spellDetailData.casting_time}</li>
-            </ul>
-            <ul className="########">
-              <li><b>Material:</b> {this.props.spellDetailData.material ? this.props.spellDetailData.material : 'none'}</li>
-            </ul>
-            <ul className="########">
-              <li><b>Class:</b> {this.props.spellDetailData.class}</li>
-            </ul>
-            <ul className="########">
-              <li><b>Concentration:</b> {this.props.spellDetailData.concentration}</li>
-              <li><b>Ritual:</b> {this.props.spellDetailData.ritual}</li>
+            <ul className="spelldetails__infolist">
+              <li className="spelldetails__info"><b>Level:</b> {this.props.spellDetailData.level}</li>
+              <li className="spelldetails__info"><b>Page:</b> {this.props.spellDetailData.page}</li>
+              <li className="spelldetails__info"><b>School:</b> {this.props.spellDetailData.school}</li>
+              <li className="spelldetails__info"><b>Range:</b> {this.props.spellDetailData.range}</li>
+              <li className="spelldetails__info"><b>Duration:</b> {this.props.spellDetailData.duration}</li>
+              <li className="spelldetails__info"><b>Components:</b> {this.props.spellDetailData.components}</li>
+              <li className="spelldetails__info"><b>Casting Time:</b> {this.props.spellDetailData.casting_time}</li>
+              <li className="spelldetails__info"><b>Material:</b> {this.props.spellDetailData.material ? this.props.spellDetailData.material : 'none'}</li>
+              <li className="spelldetails__info"><b>Class:</b> {this.props.spellDetailData.class}</li>
+              <li className="spelldetails__info"><b>Concentration:</b> {this.props.spellDetailData.concentration}</li>
+              <li className="spelldetails__info"><b>Ritual:</b> {this.props.spellDetailData.ritual}</li>
             </ul>
             <p dangerouslySetInnerHTML={createMarkup(descData)} />
           </div>

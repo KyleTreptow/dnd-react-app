@@ -14,6 +14,9 @@
     padding: 0
     height: 100%
     overflow-y: scroll
+    &::-webkit-scrollbar
+    &::-webkit-scrollbar-track
+    &::-webkit-scrollbar-thumb
   @media #{$media-max-sm}
     &__main
       padding-top: $blh*4
@@ -50,7 +53,7 @@
     &__main
       grid-area: main
       position: relative
-      padding-top: $blh*4
+      padding-top: $blh*3.5
     &__aside
       grid-area: aside
     &__roll
@@ -99,7 +102,7 @@
   border-bottom: solid 1px #ddd
   &__optionlist
     padding: 0
-    margin: 0 0 $blh/2 0
+    margin: 0
   &__option
     display: inline-block
     width: 25%
@@ -143,11 +146,14 @@
     left: 0
     width: 100%
   @media #{$media-min-sm}
+    padding: $blh/2 0 $blh/2 $blh 
     position: absolute
     background: #fff
     top: 0
     left: 0
     width: 100%
+    height: $blh*3.5
+
 //////////////////////////////////////////////
 // Component: Spelldetails
 //////////////////////////////////////////////
@@ -160,6 +166,12 @@
     margin: 0 0 $blh 0
   &__option
     display: inline-block
+    margin-left: $blh/2
+  &__infolist
+    padding: 0
+    margin: 0 0 $blh 0
+  &__info
+    display: block
   @media #{$media-max-sm}
     position: absolute
     display: block
@@ -170,3 +182,18 @@
     &__optionlist
       text-align: right
   @media #{$media-min-sm}
+    height: 100%
+    padding: $blh*3.5 $blh $blh $blh
+    position: relative
+    &__inner
+      position: static
+      height: 100%
+      overflow-y: auto
+      border: solid 1px #ddd
+    &__optionlist
+      position: absolute
+      top: 0
+      right: 0
+      width: 100%
+      padding: $blh
+      text-align: right
