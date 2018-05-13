@@ -1,12 +1,12 @@
 import { Component } from 'react';
-import './CharacterSheet.css';
-import Character from './classes/Character.class'
+//import './CharacterSheet.css';
+//import Character from './classes/Character.class'
 
-import ImmutableCharacter from './classes/ImmutableCharacter';
+//import ImmutableCharacter from './classes/ImmutableCharacter';
 
-import Template from './views/CharacterSheet.template'
+import Template from './CharacterSheet.template'
 
-import sampleCharacterConfig from './SampleCharacter';
+//import sampleCharacterConfig from './SampleCharacter';
 
 export default class CharacterSheet extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class CharacterSheet extends Component {
         // Define tabs here
         this.tabs = ["main", "details", "equipment", "combat", "spells"];
 
-        let immutableCharacter = new ImmutableCharacter();
+        /* let immutableCharacter = new ImmutableCharacter();
         immutableCharacter.updateStat("strength", 15, true, []);
 
         let character = new Character(sampleCharacterConfig);
@@ -25,8 +25,10 @@ export default class CharacterSheet extends Component {
             immutableCharacter: immutableCharacter,
             immutableStateCharacter: immutableCharacter.immutify(),
             currentTab: "main"
-        };
+        }; */
     }
+
+    
 
     updateCharacter() {
         this.setState({

@@ -1,9 +1,11 @@
 import React from 'react';
 
-import StatsComponent from '../components/StatsComponent'
+/* import StatsComponent from '../components/StatsComponent'
 import SkillsComponent from '../components/SkillsComponent'
 import FeaturesComponent from '../components/FeaturesComponent'
-import SpellsComponent from '../components/SpellsComponent'
+import SpellsComponent from '../components/SpellsComponent' */
+
+import CharacterCreation from './components/creation/CharacterCreation.component';
 
 export default function() {
     return (
@@ -13,7 +15,8 @@ export default function() {
                     <h1>Character Sheet
                         <small>Put the character sheet component here!</small>
                     </h1>
-                    <div className="cs-nav">
+                    <CharacterCreation />
+                   {/*  <div className="cs-nav">
                         <h1>Immutable Debug</h1>
                         ImmutableCharacter: {JSON.stringify(this.state.immutableStateCharacter)}
                     </div>
@@ -25,7 +28,7 @@ export default function() {
                     <SkillsComponent character={this.state.character} characterObject={this.state.characterObject} updateCharacter={this.updateCharacter.bind(this)} />
                     <FeaturesComponent character={this.state.character} characterObject={this.state.characterObject} updateCharacter={this.updateCharacter.bind(this)} />
                     <SpellsComponent character={this.state.character} characterObject={this.state.characterObject} updateCharacter={this.updateCharacter.bind(this)} />
-                    <p>Lorem ipsum dolor sit amet, periculis inciderint vix ne. Omnis debet vis ex, te choro salutatus disputando quo, no usu deserunt pericula argumentum. Vis solet philosophia an. Cu nec ipsum utinam, pri dico corrumpit disputando an. Minimum blandit sadipscing id pri. Ea propriae oportere pro.</p>
+                    <p>Lorem ipsum dolor sit amet, periculis inciderint vix ne. Omnis debet vis ex, te choro salutatus disputando quo, no usu deserunt pericula argumentum. Vis solet philosophia an. Cu nec ipsum utinam, pri dico corrumpit disputando an. Minimum blandit sadipscing id pri. Ea propriae oportere pro.</p> */}
                 </div>
             </div>
         </div>

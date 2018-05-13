@@ -6,7 +6,7 @@ import './App.css';
 import Navigation from './Navigation/Navigation.js';
 import Home from './Home/Home.js';
 import Spellbook from './Spellbook/Spellbook.js';
-import CharacterSheet from './CharacterSheet/CharacterSheet.js';
+import CharacterSheet from './CharacterSheetV3/CharacterSheet.js';
 import Equipment from './Equipment/Equipment.js';
 
 class App extends Component {

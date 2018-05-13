@@ -6,7 +6,7 @@ export default function() {
             <h1>Features Component
                 <small>List the character&apos;s features here</small>
             </h1>
-            <div class="features">
+            <div className="features">
                 <h2>Class Features</h2>
                 <ul className="classFeatures">
                 {this.classFeaturesObject.map((feature, index) =>
@@ -18,7 +18,7 @@ export default function() {
                 )}
                 </ul>
             </div>
-            <div class="features">
+            <div className="features">
                 <h2>Racial Features</h2>
                 <ul className="racialFeatures">
                     {this.racialFeaturesObject.map((feature, index) =>
