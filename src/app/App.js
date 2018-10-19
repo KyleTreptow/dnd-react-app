@@ -111,9 +111,7 @@ class App extends Component {
             </div>
           </header>
           <main className="app__main">
-
             { activePanel }
-
           </main>
           {/* <footer className="app__footer">
             <ul className="pipelist">
